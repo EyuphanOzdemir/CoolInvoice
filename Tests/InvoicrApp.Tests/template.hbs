@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice</h1>
+    <p>Event ID: {{id}}</p>
+    <p>Event Type: {{eventType}}</p>
+    <p>Invoice ID: {{content.invoiceId}}</p>
+    <p>Invoice Number: {{content.invoiceNumber}}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit Cost</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each content.lineItems}}
+            <tr>
+                <td>{{description}}</td>
+                <td>{{quantity}}</td>
+                <td>{{unitCost}}</td>
+                <td>{{lineItemTotalCost}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <p>Invoice Total: {{content.total}}</p>
+</body>
+</html>

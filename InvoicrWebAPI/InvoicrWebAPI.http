@@ -1,0 +1,6 @@
+@InvoicrWebAPI_HostAddress = http://localhost:5280
+
+GET {{InvoicrWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
